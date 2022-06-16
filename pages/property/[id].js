@@ -13,14 +13,14 @@ const PropertyDetails = ({ propertyDetails: { price, rentFrequency, rooms, title
     {photos && <ImageScrollbar data={photos} />}
     <Box w='full' p='6'>
       <Flex paddingTop='2' alignItems='center'>
-        <Box paddingRight='3' color='green.400'>{isVerified && <GoVerified />}</Box>
+        <Box paddingRight='3' color='yellow.400'>{isVerified && <GoVerified />}</Box>
         <Text fontWeight='bold' fontSize='lg'>
           AED {price} {rentFrequency && `/${rentFrequency}`}
         </Text>
         <Spacer />
         <Avatar size='sm' src={agency?.logo?.url}></Avatar>
       </Flex>
-      <Flex alignItems='center' p='1' justifyContent='space-between' w='250px' color='blue.400'>
+      <Flex alignItems='center' p='1' justifyContent='space-between' w='250px' color='green.400'>
         {rooms}<FaBed /> | {baths} <FaBath /> | {millify(area)} sqft <BsGridFill />
       </Flex>
     </Box>
@@ -49,7 +49,7 @@ const PropertyDetails = ({ propertyDetails: { price, rentFrequency, rooms, title
         <Flex flexWrap='wrap'>
           {amenities?.map((item) => (
               item?.amenities?.map((amenity) => (
-                <Text key={amenity.text} fontWeight='bold' color='blue.400' fontSize='l' p='2' bg='gray.200' m='1' borderRadius='5'>
+                <Text key={amenity.text} fontWeight='bold' color='green.400' fontSize='l' p='2' bg='gray.200' m='1' borderRadius='5'>
                   {amenity.text}
                 </Text>
               ))
